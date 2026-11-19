@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>PROGRAM KONVERSI NILAI</h2>
+    <form name="kirim">
+      <p>
+        Masukkan Nilai Angka :
+        <input type="text" id="nilai" size="10" />
+      </p>
+
+      <p>
+        Nilai Huruf :
+        <input type="text" id="hasil" size="10" readonly />
+      </p>
+
+      <input type="button" value="KONVERSI" onclick="konversi()" />
+      <input type="reset" value="RESET" />
+    </form>
+
+    <script language="JavaScript">
+      function konversi() {
+        var nilai = document.getElementById("nilai").value;
+        var hasil = "";
+        nilai = Number(nilai);
+
+        if (
+          nilai < 0 ||
+          nilai > 100 ||
+          document.getElementById("nilai").value == ""
+        ) {
+          alert("Masukkan nilai antara 0 sampai 100!");
+        } else if (nilai <= 40) {
+          hasil = "E";
+        } else if (nilai <= 55) {
+          hasil = "D";
+        } else if (nilai <= 60) {
+          hasil = "C";
+        } else if (nilai <= 65) {
+          hasil = "BC";
+        } else if (nilai <= 70) {
+          hasil = "B";
+        } else if (nilai <= 80) {
+          hasil = "AB";
+        } else {
+          hasil = "A";
+        }
+
+        document.getElementById("hasil").value = hasil;
+      }
+    </script>
+  </body>
+</html>

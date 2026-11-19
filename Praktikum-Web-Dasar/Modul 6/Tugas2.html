@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>KALKULATOR SEDERHANA</h2>
+    <form name="kirim">
+      <p>
+        Bil 1 :
+        <input type="text" id="bil1" size="15" />
+      </p>
+
+      <p>
+        Bil 2 :
+        <input type="text" id="bil2" size="15" />
+      </p>
+
+      <p>
+        Hasil :
+        <input type="text" id="hasil" size="15" readonly />
+      </p>
+
+      <p>
+        <input type="button" value="+" onclick="hitung('+')" />
+        <input type="button" value="-" onclick="hitung('-')" />
+        <input type="button" value="X" onclick="hitung('*')" />
+        <input type="button" value="/" onclick="hitung('/')" />
+      </p>
+      <input type="reset" value="RESET" />
+    </form>
+
+    <script language="JavaScript">
+      function hitung(operator) {
+        var bil1 = document.getElementById("bil1").value;
+        var bil2 = document.getElementById("bil2").value;
+        var angka1 = Number(bil1);
+        var angka2 = Number(bil2);
+        var hasil = 0;
+
+        if (bil1 == "" || bil2 == "") {
+          alert("Masukkan kedua bilangan terlebih dahulu!");
+          return;
+        }
+
+        if (operator == "+") {
+          hasil = angka1 + angka2;
+        } else if (operator == "-") {
+          hasil = angka1 - angka2;
+        } else if (operator == "*") {
+          hasil = angka1 * angka2;
+        } else if (operator == "/") {
+          if (angka2 == 0) {
+            alert("Bilangan tidak dapat dibagi dengan nol!");
+            return;
+          }
+          hasil = angka1 / angka2;
+        }
+        document.getElementById("hasil").value = hasil;
+      }
+    </script>
+  </body>
+</html>

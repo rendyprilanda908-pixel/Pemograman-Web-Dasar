@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Relasional</title>
+  </head>
+  <body>
+    <input type="button" name="button1" value="Relational" onclick="test()" />
+    <div id="output"></div>
+
+    <script>
+      function test() {
+        let val1 = Number(window.prompt("Nilai I :"));
+        let val2 = Number(window.prompt("Nilai II :"));
+
+        let hasil = `
+          <br>val1 == val2 : ${val1 == val2}
+          <br>val1 !== val2 : ${val1 !== val2}
+          <br>val1 &gt; val2 : ${val1 > val2}
+          <br>val1 &lt; val2 : ${val1 < val2}
+        `;
+
+        document.getElementById("output").innerHTML = hasil;
+      }
+    </script>
+  </body>
+</html>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh if-else</title>
+  </head>
+  <body>
+    <script>
+      let nilai = Number(prompt("Nilai (0-100): ", 0));
+      let hasil = "";
+
+      if (nilai >= 60) {
+        hasil = "Lulus";
+      } else {
+        hasil = "Tidak Lulus";
+      }
+
+      document.write("Hasil: " + hasil);
+    </script>
+  </body>
+</html>
